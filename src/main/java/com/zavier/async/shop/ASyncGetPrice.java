@@ -1,4 +1,4 @@
-package com.zavier.async;
+package com.zavier.async.shop;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +16,10 @@ public class ASyncGetPrice {
     public static void main(String[] args) {
         final ASyncGetPrice getPriceV2 = new ASyncGetPrice();
         getPriceV2.findPrices1("myphone27S");
+        // 2与3都使用的与核数相等的线程数量的线程池，即 Runtime.getRuntime().availableProcessors()
         getPriceV2.findPrices2("myphone27S");
         getPriceV2.findPrices3("myphone27S");
+        // 可根据情况优化线程池
         getPriceV2.findPrices4("myphone27S");
 
 

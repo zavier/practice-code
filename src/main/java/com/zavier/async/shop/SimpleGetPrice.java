@@ -1,4 +1,4 @@
-package com.zavier.async;
+package com.zavier.async.shop;
 
 import java.util.concurrent.Future;
 
