@@ -1,0 +1,5 @@
+simple=com.test.spi.SimpleServiceImpl
+complex=com.test.spi.ComplexServiceImpl
+actone=com.test.spi.ActivateOneServiceImpl
+acttwo=com.test.spi.ActivateTwoServiceImpl
+noact=com.test.spi.NoActivateServiceImpl
