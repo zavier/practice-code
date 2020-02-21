@@ -3,6 +3,7 @@ package com.zavier.nettyaction;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
+import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
@@ -29,7 +30,7 @@ public class EchoServer {
 
     public void start() throws Exception {
         EchoServerHandler serverHandler = new EchoServerHandler();
-        NioEventLoopGroup group = new NioEventLoopGroup();
+        EventLoopGroup group = new NioEventLoopGroup();
         try {
             ServerBootstrap b = new ServerBootstrap();
             b.group(group)
@@ -46,6 +47,7 @@ public class EchoServer {
             // 同步阻塞等待channel关闭
             f.channel().closeFuture().sync();
         } finally {
+            System.out.println("shutdown");
             group.shutdownGracefully().sync();
         }
     }
