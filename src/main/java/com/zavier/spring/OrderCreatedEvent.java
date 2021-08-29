@@ -1,8 +1,9 @@
 package com.zavier.spring;
 
+import com.zavier.annotation.Builder;
 import org.springframework.context.ApplicationEvent;
 
-
+@Builder
 public class OrderCreatedEvent extends ApplicationEvent {
     private String orderSn;
 
